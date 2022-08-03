@@ -29,4 +29,13 @@ module "eks" {
   cluster_name = "awesome"
   subnet_ids = module.vpc.public_subnets
   vpc_id = module.vpc.vpc_id
+
+  # worker groups
+  eks_managed_node_groups =  {
+    name                 = "worker-group-1"
+    instance_type        = "t3.large"
+    asg_desired_capacity = 2
+    public_ip            = true
+   
+  }
 }
