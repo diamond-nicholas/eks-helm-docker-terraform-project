@@ -7,7 +7,16 @@ data "aws_availability_zones" "available" {
   
 }
 
-output "AZs" {
-  value= data.aws_availability_zones.available.names
-  description= "list of aws availability zones within the region"
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "3.14.2"
+  # insert the 23 required variables here
+}
+
+module "eks" {
+  source  = "terraform-aws-modules/eks/aws"
+  version = "18.26.6"
+  cluster_name = "awesome"
+  subnets = #TODO
+  vpc = #TODO
 }
