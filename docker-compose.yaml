@@ -18,6 +18,16 @@ services:
     environment:
       AWS_PROFILE: terraform-operator
 
+  kubectl:
+    image: abdennour/kubectl:v1.14.7-aws1.16.277
+    volumes:
+      - .:/codes
+      - aws-creds:/root/.aws:ro
+    restart: 'no'
+    entrypoint: kubectl
+    environment:
+      AWS_PROFILE: terraform-operator
+      KUBECONFIG: ~/.kube/config
 volumes:
   aws-creds:
     name: aws-creds

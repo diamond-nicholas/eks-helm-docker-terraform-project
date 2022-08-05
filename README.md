@@ -21,3 +21,13 @@
 `docker-compose run --rm terraform plan`
 
 `docker-compose run --rm terraform apply`
+
+## Run kubectl of all namespace
+
+`docker-compose run --rm kubectl get all --all-namespaces`
+
+## Check worker nodes
+
+`docker-compose run --rm kubectl get nodes`
+
+`docker-compose run --rm kubectl apply -f /code/config-map-aws-auth_awesome.yaml`

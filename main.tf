@@ -38,4 +38,6 @@ module "eks" {
     public_ip            = true
    
   }
+
+  manage_aws_auth_configmap = true
 }
