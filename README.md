@@ -43,3 +43,7 @@
 ## expose port via port forward
 
 ` kubectl port-forward hello-world-5d569666ff-x7tc5 8090:80`
+
+## Create first helm-chart
+
+`helm create hello-chart`

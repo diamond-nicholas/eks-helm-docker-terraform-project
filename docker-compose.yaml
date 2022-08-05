@@ -45,3 +45,5 @@ services:
 volumes:
   aws-creds:
     name: aws-creds
+  helm-config:
+  helm-cache:
