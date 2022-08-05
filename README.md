@@ -60,7 +60,12 @@
 
 ## View Pod
 
-` echo $POD_NAME `
+`echo $POD_NAME`
 
 ## Forward helm-chart pods
-` kubectl --namespace nshello port-forward $POD_NAME 8090:80 --address 0.0.0.0 `
+
+`kubectl --namespace nshello port-forward $POD_NAME 8090:80 --address 0.0.0.0`
+
+## Upgrade Helm Chart
+
+`helm upgrade myapp hello-chart --namespace nshell`
