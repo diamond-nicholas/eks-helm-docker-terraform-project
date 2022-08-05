@@ -31,3 +31,15 @@
 `docker-compose run --rm kubectl get nodes`
 
 `docker-compose run --rm kubectl apply -f /code/config-map-aws-auth_awesome.yaml`
+
+## Create deployment with kubectl view yaml
+
+` kubectl create deployment hello-world --image=nginx --dry-run -o yaml`
+
+## Create deployment with kubectl
+
+`kubectl create deployment hello-world --image=nginx`
+
+## expose port via port forward
+
+` kubectl port-forward hello-world-5d569666ff-x7tc5 8090:80`

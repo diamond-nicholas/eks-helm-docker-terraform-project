@@ -7,6 +7,8 @@ data "aws_availability_zones" "available" {
   
 }
 
+
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.14.2"
@@ -39,5 +41,4 @@ module "eks" {
    
   }
 
-  manage_aws_auth_configmap = true
 }
