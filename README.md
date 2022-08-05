@@ -47,3 +47,20 @@
 ## Create first helm-chart
 
 `helm create hello-chart`
+
+## Deploy helm chart
+
+`kubectl create ns nshello`
+
+`helm install myapp hello-chart --namespace nshello`
+
+## check current ns app
+
+`helm list --namespace nshello`
+
+## View Pod
+
+` echo $POD_NAME `
+
+## Forward helm-chart pods
+` kubectl --namespace nshello port-forward $POD_NAME 8090:80 --address 0.0.0.0 `
