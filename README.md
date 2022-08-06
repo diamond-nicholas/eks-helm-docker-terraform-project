@@ -92,4 +92,4 @@
 
 `helm repo add nginx-stable https://helm.nginx.com/stable`
 ` helm repo update`
-`helm install ingress stable/nginx-ingress --namespace kube-system -f charts/nginx-ingress/values.yaml`
+`helm install ingress nginx-stable/nginx-ingress --namespace kube-system -f charts/nginx-ingress/values.yaml`
