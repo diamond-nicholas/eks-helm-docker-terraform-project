@@ -1,13 +1,3 @@
-persistence:
-  enabled: true
-  size: '3Gi'
-
-master:
-  tag: 'lts'
-  ingress:
-    enabled: true
-    annotations:
-      kubernetes.io/ingress.class: nginx
-    hostName:
-    jenkinsUrl: ''
-    adminPassword: HelloWorld
+controller:
+  serviceType: LoadBalancer
+  jenkinsUrl: aa73784bf59554a75960f095b4fe77aa-1905932510.us-east-1.elb.amazonaws.com:8080/

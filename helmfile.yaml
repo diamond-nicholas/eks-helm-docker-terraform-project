@@ -16,3 +16,12 @@ releases:
     namespace: kube-system
     values:
       - './charts/nginx-ingress/values.yaml'
+  - name: jenkins
+    chart: stable/jenkins
+    namespace: cicd
+    values:
+      - './charts/jenkins/values.yaml'
+
+set:
+  - name: jenkinsadminPassword
+    value: { { requiredEnv "JENKINS_PWD" } }

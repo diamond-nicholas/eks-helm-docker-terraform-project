@@ -93,3 +93,21 @@
 `helm repo add nginx-stable https://helm.nginx.com/stable`
 ` helm repo update`
 `helm install ingress nginx-stable/nginx-ingress --namespace kube-system -f charts/nginx-ingress/values.yaml`
+
+## Install JEnkins via helm
+
+`helm repo add jenkins https://charts.jenkins.io`
+
+`helm repo update`
+
+`helm upgrade --install myjenkins jenkins/jenkins`
+
+`helm upgrade --install -f charts/jenkins/values.yaml myjenkins jenkins/jenkins`
+
+## Get ur admin password by running this
+
+`kubectl exec --namespace default -it svc/myjenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo`
+
+## Forward port
+
+`kubectl --namespace default port-forward svc/myjenkins 8080:8080`
