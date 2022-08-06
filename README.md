@@ -77,3 +77,13 @@
 `helm install metrics-server bitnami/metrics-server --namespace kube-system -f charts/metrics-server/values.yaml`
 
 `helm upgrade --namespace kube-system metrics-server bitnami/metrics-server --set apiService.create=true `
+
+## Install cluster-autoscaler
+
+`helm repo add stable https://charts.helm.sh/stable`
+
+`helm install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system -f charts/cluster-autoscaler/values.yaml`
+
+## Check cluster logs
+
+` kubectl -n kube-system logs -f cluster-autoscaler-aws-cluster-autoscaler-6499df5c6d-7pjc4`
