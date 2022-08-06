@@ -87,3 +87,9 @@
 ## Check cluster logs
 
 ` kubectl -n kube-system logs -f cluster-autoscaler-aws-cluster-autoscaler-6499df5c6d-7pjc4`
+
+## Install ingress charts
+
+`helm repo add nginx-stable https://helm.nginx.com/stable`
+` helm repo update`
+`helm install ingress stable/nginx-ingress --namespace kube-system -f charts/nginx-ingress/values.yaml`
