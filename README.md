@@ -64,8 +64,16 @@
 
 ## Forward helm-chart pods
 
-`kubectl --namespace nshello port-forward $POD_NAME 8090:80 --address 0.0.0.0`
+`kubectl --namespace nshellon port-forward $POD_NAME 8090:80 --address 0.0.0.0`
 
 ## Upgrade Helm Chart
 
-`helm upgrade myapp hello-chart --namespace nshell`
+`helm upgrade myapp hello-chartn --namespace nshellon`
+
+## Install metric/server
+
+`helm repo add bitnami https://charts.bitnami.com/bitnami `
+
+`helm install metrics-server bitnami/metrics-server --namespace kube-system -f charts/metrics-server/values.yaml`
+
+`helm upgrade --namespace kube-system metrics-server bitnami/metrics-server --set apiService.create=true `
