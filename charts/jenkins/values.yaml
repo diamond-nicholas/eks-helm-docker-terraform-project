@@ -1,3 +1,25 @@
 controller:
   serviceType: LoadBalancer
   jenkinsUrl: aa73784bf59554a75960f095b4fe77aa-1905932510.us-east-1.elb.amazonaws.com:8080/
+master:
+  adminPassword: pa55w0rd
+  overwritePlugins: true
+  installPlugins:
+    - kubernetes:
+    - workflow-job:
+    - workflow-aggregator:
+    - credentials-binding:
+    - git:
+    - configuration-as-code:
+  JCasC:
+    enabled: true
+    configScripts:
+      main-config: |
+        jenkins:
+          securityRealm:
+            github:
+              githubWebUri: "https://github.com"
+              githubApiUri: "https://api.github.com"
+              cliendID:     "3ac54ca2fb69899a6fcc"
+              clientSecret: "55ff3bd675203267c9c68970d8d8bba1efa01300"
+              oauthScopes: "read:org, user:email"
